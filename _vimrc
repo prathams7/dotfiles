@@ -74,7 +74,6 @@ set lazyredraw
 " Theme
 set background=dark
 set termguicolors
-colorscheme spacegray
 set guifont=DejaVu\ Sans\ Mono\ Book\ 14
 
 " Airline
