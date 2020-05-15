@@ -28,6 +28,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
