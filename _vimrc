@@ -8,6 +8,7 @@ set noswapfile
 set nowrap
 set nu rnu
 set shiftwidth=4
+set signcolumn=yes
 set smartcase
 set smartindent
 set tabstop=4 softtabstop=4
