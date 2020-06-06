@@ -15,6 +15,9 @@ set tabstop=4 softtabstop=4
 set undodir=~/.vim/undodir
 set undofile
 
+" Fix backspace behavior
+set backspace=indent,eol,start
+
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -37,6 +40,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-utils/vim-man'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -54,6 +58,11 @@ let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+" Indent Guides
+let g:indentLine_color_term=237
+let g:indentLine_char='¦'
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
