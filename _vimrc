@@ -11,6 +11,8 @@ set shiftwidth=4
 set signcolumn=yes
 set smartcase
 set smartindent
+set pastetoggle=<F10>
+set completeopt-=preview
 set tabstop=4 softtabstop=4
 set undodir=~/.vim/undodir
 set undofile
