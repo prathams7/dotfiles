@@ -10,6 +10,70 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+# #---Basic Definitions---# #
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 5
+smart_gaps  on
+hide_edge_borders smart_no_gaps
+set $term --no-startup-id $TERMINAL
+set $mod Mod4
+
+#set $bg #282828
+#set $red #cc241d
+#set $green #98971a
+#set $yellow #d79921
+#set $blue #458588
+#set $purple #b16286
+#set $aqua #689d68
+#set $gray #a89984
+#set $darkgray #1d2021
+
+set_from_resource $black        color0  #282828
+set_from_resource $darkgray     color8  #1d2021
+set_from_resource $darkred      color1  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $white        color15 #000000
+set $transparent #00000000
+set $bg $black
+
+#start of window title bars & borders section
+
+# green gruvbox
+# class                 border      backgr      text        indicator   child_border
+client.focused          $darkblue   $darkgreen  $darkgray   $darkcyan   $darkgreen
+client.focused_inactive $darkgreen  $darkgreen  $yellow     $darkblue   $darkgray
+client.unfocused        $darkgray   $darkgray   $yellow     $darkblue   $darkgray
+client.urgent           $red        $red        $white      $red        $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+# client.focused          $blue $blue $darkgray $purple $darkgray
+# client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+# client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+# client.urgent           $red $red $white $red $red
+
+# class                 border  backgr. text    indicator child_border
+#client.focused          #ff2740	#333333	$eeeeee	#666666	  #ff2740
+#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+#client.background       #333333
+
+#end of window title bars & borders section
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -66,10 +130,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -77,17 +141,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+Shift+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# split toggle
+bindsym $mod+s split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# change container layout (tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -180,15 +240,15 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-# Gaps
-gaps inner 5
-gaps outer 5
-
-# Get rid of title bars
-for_window [class="^.*"] border pixel 2
-
 # Enable touchpad
 exec input set-prop 13 349 1
 
 # Enable polybar
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
+
+# Set Wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/10-15-Day.jpg
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
