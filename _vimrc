@@ -48,6 +48,7 @@ call plug#end()
 
 colorscheme gruvbox
 set background=dark
+hi Normal guibg=NONE ctermbg=NONE
 
 if executable('rg')
     let g:rg_derive_root='true'
