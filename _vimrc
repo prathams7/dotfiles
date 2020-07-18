@@ -26,13 +26,15 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'git@github.com:kien/ctrlp.vim.git'
+Plug 'Yggdroot/indentLine'
+Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
-Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
@@ -41,7 +43,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-utils/vim-man'
-Plug 'Yggdroot/indentLine'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -60,9 +61,6 @@ let g:netrw_browse_split=2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
 
 " Indent Guides
 let g:indentLine_color_term=237
@@ -71,7 +69,9 @@ let g:indentLine_char='¦'
 " Ignore startup message coc
 let g:coc_disable_startup_warning = 1 
  
-noremap <leader>h :wincmd h<CR>
+nnoremap <C-p> :Files<Cr>
+nnoremap <leader>ps :Rg<SPACE>
+nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
