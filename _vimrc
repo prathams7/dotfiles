@@ -78,7 +78,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>se :UltiSnipsEdit<CR>
-noremap <silent> <leader>+ :vertical resize +5<CR>
+nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
