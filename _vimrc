@@ -48,6 +48,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_invert_selection='0'
 colorscheme gruvbox
 set background=dark
 "hi Normal guibg=NONE ctermbg=NONE
@@ -84,11 +86,13 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " GoTo code navigation.
-nmap <leader> gd <Plug>(coc-definition)
-nmap <leader> gy <Plug>(coc-type-definition)
-nmap <leader> gi <Plug>(coc-implementation)
-nmap <leader> gr <Plug>(coc-references)
-
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+" Rename word across entire project
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 " Close NERDTree if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
