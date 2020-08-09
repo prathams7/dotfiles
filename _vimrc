@@ -1,5 +1,6 @@
 syntax on
 
+set belloff=all
 set expandtab
 set incsearch
 set nobackup
