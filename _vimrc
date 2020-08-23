@@ -31,13 +31,14 @@ Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -63,6 +64,8 @@ let g:netrw_browse_split=2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+" Rustfmt
+let g:rustfmt_autosave = 1
 
 " Indent Guides
 let g:indentLine_color_term=237
@@ -73,6 +76,7 @@ let g:coc_disable_startup_warning = 1
  
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>ps :Rg<SPACE>
+nnoremap <leader>pa :Ag<SPACE>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
