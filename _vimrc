@@ -73,8 +73,8 @@ let g:indentLine_color_term=237
 let g:indentLine_char='¦'
 
 " Ignore startup message coc
-let g:coc_disable_startup_warning = 1 
- 
+let g:coc_disable_startup_warning = 1
+
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pa :Ag<SPACE>
