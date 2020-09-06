@@ -32,9 +32,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'jmckiern/vim-shoot', { 'do': '\"./install.py\" geckodriver' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
