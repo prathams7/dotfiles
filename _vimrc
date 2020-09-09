@@ -1,5 +1,6 @@
 syntax on
 
+set autoread
 set belloff=all
 set completeopt-=preview
 set expandtab
