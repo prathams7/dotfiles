@@ -2,8 +2,8 @@ Config { font = "xft:Ubuntu Mono:pixelsize=16:antialias=true:hinting:true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
-       , bgColor = "black"
-       , fgColor = "grey"
+       , bgColor = "#282828"
+       , fgColor = "#ebdbb2"
        , position = Top
        , textOffset = -1
        , iconOffset = -1
@@ -16,63 +16,63 @@ Config { font = "xft:Ubuntu Mono:pixelsize=16:antialias=true:hinting:true"
        , overrideRedirect = True
        , commands = [ Run Network "enp2s0f1" [ "--Low"    , "35"
                                              , "--High"   , "65"
-                                             , "--normal" , "green"
-                                             , "--high"   , "red"
+                                             , "--normal" , "#98971a"
+                                             , "--high"   , "#cc241d"
                                              ] 10
 
-                    , Run Network "wlp3s0" [ "--Low"    , "0"
-                                           , "--High"   , "32"
-                                           , "--normal" , "green"
-                                           , "--high"   , "red"
+                    , Run Network "wlp3s0" [ "--Low"    , "50"
+                                           , "--High"   , "150"
+                                           , "--normal" , "#98971a"
+                                           , "--high"   , "#cc241d"
                                            ] 10
 
                     , Run Cpu [ "--template" , "cpu: <ipat><total>% "
                               , "--Low"      , "5"
                               , "--High"     , "55"
-                              , "--low"      , "green"
-                              , "--normal"   , "darkorange"
-                              , "--high"     , "red"
+                              , "--low"      , "#98971a"
+                              , "--normal"   , "#458588"
+                              , "--high"     , "#cc241d"
                               ] 10
 
                     , Run DiskU [ ("/" , "hdd: <used> / <size>")] 
                                 [ "--Low"      , "100"
                                 , "--High"     , "700"
-                                , "--low"      , "green"
-                                , "--normal"   , "darkorange"
-                                , "--high"     , "red"
+                                , "--low"      , "#98971a"
+                                , "--normal"   , "#458588"
+                                , "--high"     , "#cc241d"
                                 ] 10
 
                     -- memory usage monitor
                     , Run Memory [ "--template" ,"mem: <usedratio>%"
                                  , "--Low"      , "20"        -- units: %
                                  , "--High"     , "90"        -- units: %
-                                 , "--low"      , "green"
-                                 , "--normal"   , "darkorange"
-                                 , "--high"     , "red"
+                                 , "--low"      , "#98971a"
+                                 , "--normal"   , "#458588"
+                                 , "--high"     , "#cc241d"
                                  ] 10
 
                     -- time and date indicator 
-                    , Run Date "<fc=#ee9a00> %b %d %Y (%a) %I:%M %p </fc>" "date" 10
+                    , Run Date "<fc=#b16286> %b %d %Y (%a) %I:%M %p </fc>" "date" 10
 
                     -- battery monitor
                     , Run Battery [ "--template" , "batt: <acstatus>"
                                   , "--Low"      , "10"        -- units: %
                                   , "--High"     , "80"        -- units: %
-                                  , "--low"      , "red"
-                                  , "--normal"   , "darkorange"
-                                  , "--high"     , "green"
+                                  , "--low"      , "#cc241d"
+                                  , "--normal"   , "#458588"
+                                  , "--high"     , "#98971a"
                                   , "--" -- battery specific options
                                         -- discharging status
                                         , "-o" , "<left>% (<timeleft>)"
 
                                         -- AC "on" status
-                                        , "-O" , "<fc=#dAA520>Charging</fc> <left>%"
+                                        , "-O" , "<fc=#689d6a>Charging</fc> <left>%"
 
                                         -- charged status
-                                        , "-i" , "<fc=#006000>Charged</fc>"
+                                        , "-i" , "<fc=#98971a>Charged</fc>"
                                   ] 50
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "| %battery% | %date% | %disku% | %cpu% | %memory% | %enp2s0f1% - %wlp3s0%"
+       , template = "| %battery% | %disku% | %cpu% | %memory% | %enp2s0f1% - %wlp3s0% }{ %date%"
        }
