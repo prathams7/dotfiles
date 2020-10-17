@@ -11,13 +11,14 @@ import XMonad
 import Data.Monoid
 import System.Exit
 
-import XMonad.Layout.Spacing
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.Spacing
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -35,7 +36,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 2
+myBorderWidth   = 4
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -57,8 +58,8 @@ myWorkspaces    = ["1"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#a89984"
+myFocusedBorderColor = "#cc241d"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -67,7 +68,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-
+    
     -- lock screen
     , ((modm .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
 
@@ -257,13 +258,11 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
         spawnOnce "nitrogen --restore &"
-        spawnOnce "compton &"
-        spawnOnce "amixer -D pulse sset Master 100%"
-        spawnOnce "xscreensaver -no-splash &"
-        spawnOnce "xrandr --output HDMI-1-1 --left-of eDP-1-1 --mode 1680x1050"
-        spawnOnce "gnome-power-manager &"
         spawnOnce "nm-applet &"
         spawnOnce "volumeicon &"
+        spawnOnce "gnome-power-manager &"
+        spawnOnce "xrandr --output HDMI-1-1 --left-of eDP-1-1 --mode 1680x1050"
+        spawnOnce "xscreensaver -no-splash &"
         spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --height 22 &"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
