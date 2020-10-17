@@ -71,6 +71,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- lock screen
     , ((modm .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+    
+    -- lock screen
+    , ((modm .|. shiftMask, xK_Up), spawn "amixer -D pulse sset Master 5%+")
+    , ((modm .|. shiftMask, xK_Down), spawn "amixer -D pulse sset Master 5%-")
 
     -- screenshot 
     , ((0, xK_Print), spawn "scrot")
