@@ -1,6 +1,9 @@
 filetype plugin indent on
 syntax on
 
+set guioptions-=m
+set guioptions-=T
+
 set autoread
 set belloff=all
 set completeopt-=preview
@@ -11,7 +14,6 @@ set noerrorbells
 set noswapfile
 set nowrap
 set nu rnu
-set pastetoggle=<F10>
 set shiftwidth=4
 set signcolumn=yes
 set smartcase
@@ -34,7 +36,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jmckiern/vim-shoot', { 'do': '\"./install.py\" geckodriver' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
@@ -49,6 +50,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-utils/vim-man'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -57,6 +59,9 @@ let g:gruvbox_invert_selection='0'
 colorscheme gruvbox
 set background=dark
 "hi Normal guibg=NONE ctermbg=NONE
+
+
+" let $FZF_DEFAULT_OPTS='--reverse'
 
 if executable('rg')
     let g:rg_derive_root='true'
