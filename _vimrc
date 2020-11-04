@@ -18,6 +18,7 @@ set shiftwidth=4
 set signcolumn=yes
 set smartcase
 set smartindent
+set termguicolors 
 set tabstop=4 softtabstop=4
 set title
 set undodir=~/.vim/undodir
@@ -56,11 +57,10 @@ call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_invert_selection='0'
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
+
 "hi Normal guibg=NONE ctermbg=NONE
-
-
 " let $FZF_DEFAULT_OPTS='--reverse'
 
 if executable('rg')
@@ -71,6 +71,12 @@ let mapleader = " "
 let g:netrw_browse_split=2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+
+" nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDTrimTrailingWhitespace = 1
 
 " Rustfmt
 let g:rustfmt_autosave = 1
