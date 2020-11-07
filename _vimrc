@@ -1,4 +1,4 @@
-filetype plugin indent on
+filetype plugin indent on 
 syntax on
 
 set guioptions-=m
@@ -78,6 +78,9 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
+" fzf
+let $FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+
 " Rustfmt
 let g:rustfmt_autosave = 1
 
@@ -90,7 +93,6 @@ let g:coc_disable_startup_warning = 1
 
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>ps :Rg<SPACE>
-nnoremap <leader>pa :Ag<SPACE>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
