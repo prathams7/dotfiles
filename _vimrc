@@ -67,6 +67,11 @@ let g:gruvbox_invert_selection='0'
 set background=dark
 colorscheme gruvbox
 
+" Highlight current line number
+" stackoverflow.com/questions/8247243/highlighting-the-current-line-number-in-vim
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
+
 "hi Normal guibg=NONE ctermbg=NONE
 " let $FZF_DEFAULT_OPTS='--reverse'
 
