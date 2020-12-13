@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
@@ -84,6 +85,11 @@ let g:netrw_browse_split=2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+" git gutter
+let g:gitgutter_max_signs = -1
+let g:gitgutter_show_msg_on_hunk_jumping = 0
+let g:gitgutter_map_keys = 0
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -116,6 +122,12 @@ nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" git gutter map
+nnoremap <leader>ghs :GitGutterStageHunk<CR>
+nnoremap <leader>ghp :GitGutterPreviewHunk<CR>
+nnoremap <leader>ghu :GitGutterUndoHunk<CR>
+nnoremap <leader>ghf :GitGutterFold<CR>
 
 " git status (fugitive)
 nmap <leader>gs :G<CR>
