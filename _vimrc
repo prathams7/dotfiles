@@ -18,8 +18,10 @@ set shiftwidth=4
 set signcolumn=yes
 set smartcase
 set smartindent
+set t_Co=256
+set updatetime=100
 
-"" Enable true color
+" Enable true color
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -48,7 +50,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -73,7 +74,7 @@ colorscheme gruvbox
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 
-"hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 " let $FZF_DEFAULT_OPTS='--reverse'
 
 if executable('rg')
