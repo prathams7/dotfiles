@@ -9,6 +9,7 @@ set belloff=all
 set completeopt-=preview
 set expandtab
 set incsearch
+set laststatus=2
 set nobackup
 set noerrorbells
 set noswapfile
@@ -56,7 +57,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-utils/vim-man'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -72,7 +72,7 @@ colorscheme gruvbox
 
 " Highlight current line number
 " stackoverflow.com/questions/8247243/highlighting-the-current-line-number-in-vim
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 
 " hi Normal guibg=NONE ctermbg=NONE
@@ -110,6 +110,31 @@ let g:indentLine_char='¦'
 
 " Ignore startup message coc
 let g:coc_disable_startup_warning = 1
+
+" https://shapeshed.com/vim-statuslines/#showing-the-statusline 
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %F
+set statusline+=%2*%m
+set statusline+=%#CursorColumn#
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
 
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>ps :Rg<SPACE>
