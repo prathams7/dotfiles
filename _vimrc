@@ -51,10 +51,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-utils/vim-man'
@@ -91,12 +91,6 @@ let g:netrw_winsize = 25
 let g:gitgutter_max_signs = -1
 let g:gitgutter_show_msg_on_hunk_jumping = 0
 let g:gitgutter_map_keys = 0
-
-" nerdcommenter
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDTrimTrailingWhitespace = 1
 
 " fzf
 let $FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
