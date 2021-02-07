@@ -195,3 +195,5 @@ bindsym Print exec ksnip -s -f
 
 exec nitrogen --restore
 exec_always compton &
+
+for_window [class="xdman-Main"] floating enable
