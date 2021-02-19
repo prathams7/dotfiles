@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
+Plug 'fisadev/vim-isort'
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
@@ -52,6 +53,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdtree'
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
