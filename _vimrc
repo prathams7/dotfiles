@@ -121,17 +121,17 @@ let g:coc_disable_startup_warning = 1
 
 set statusline=
 set statusline+=%#PmenuSel#
-" set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%#CursorColumn#
 set statusline+=\ %f
 set statusline+=\ %m
+set statusline+=%#LineNr#
 set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
+set statusline+=%#CursorColumn#
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ 
 
 nnoremap <C-p> :Files<Cr>
