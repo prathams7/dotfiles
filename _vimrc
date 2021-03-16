@@ -83,8 +83,22 @@ colorscheme gruvbox
 " highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 
-" hi Normal guibg=NONE ctermbg=NONE
-" let $FZF_DEFAULT_OPTS='--reverse'
+hi Normal guibg=NONE ctermbg=NONE
+
+" Fzf
+
+let $FZF_DEFAULT_OPTS = '--reverse --bind ctrl-a:select-all'
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 if executable('rg')
     let g:rg_derive_root='true'
