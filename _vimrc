@@ -124,8 +124,9 @@ set statusline+=%#PmenuSel#
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%#CursorColumn#
 set statusline+=\ %f
-set statusline+=\ %m
-set statusline+=%#LineNr#
+set statusline+=\ %#Error#
+set statusline+=%m
+set statusline+=%#CursorColumn#
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %p%%
