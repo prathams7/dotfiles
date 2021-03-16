@@ -1,3 +1,4 @@
+set path+=**
 filetype plugin indent on 
 syntax on
 
@@ -10,17 +11,20 @@ set completeopt-=preview
 set expandtab
 set incsearch
 set laststatus=2
+set mouse=a
 set nobackup
 set noerrorbells
 set noswapfile
 set nowrap
 set nu rnu
+set scrolloff=10
 set shiftwidth=4
 set signcolumn=yes
 set smartcase
 set smartindent
 set t_Co=256
 set updatetime=100
+set wildmenu
 
 " Enable true color
 if exists('+termguicolors')
